@@ -10,7 +10,7 @@ int main(void)
 {
 	int i, c;
 
-	for (i = '0', c = 'a'; i <= '9' || c >= 'f'; i++)
+	for (i = '0', c = 'a'; i <= '9' || c <= 'f'; i++)
 	{
 		if (i > '9')
 			putchar(c++);
