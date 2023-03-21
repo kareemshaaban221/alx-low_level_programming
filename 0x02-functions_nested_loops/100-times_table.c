@@ -32,10 +32,10 @@ void printNormal(int n)
  */
 void print_times_table(int n)
 {
+	int i, j, tmp;
+
 	if (n > 15 || n < 0)
 		return;
-
-	int i, j, tmp;
 
 	for (i = 0; i < n; i++)
 	{
