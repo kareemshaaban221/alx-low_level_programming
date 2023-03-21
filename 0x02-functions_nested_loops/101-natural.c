@@ -16,6 +16,8 @@ int main(void)
 
 	for (i = 5; i < 1024; i += 5)
 	{
+		if (i % 3 == 0)
+			continue;
 		sum += i;
 	}
 
