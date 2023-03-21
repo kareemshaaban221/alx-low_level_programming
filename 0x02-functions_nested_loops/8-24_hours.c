@@ -33,7 +33,7 @@ void jack_bauer(void)
 {
 	int m, h;
 
-	for (h = 0; m < 24; h++)
+	for (h = 0; h < 24; h++)
 	{
 		for (m = 0; m < 60; m++)
 		{
@@ -46,6 +46,8 @@ void jack_bauer(void)
 				printComposite(h);
 			}
 
+			_putchar(':');
+
 			if (m < 10)
 			{
 				printNormal(m);
@@ -54,6 +56,8 @@ void jack_bauer(void)
 			{
 				printComposite(m);
 			}
+
+			_putchar('\n');
 		}
 	}
 }
