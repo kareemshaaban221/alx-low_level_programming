@@ -14,6 +14,7 @@ void print_alphabet(void)
 	{
 		_putchar(c);
 	}
+	_putchar('\n');
 }
 
 void print_alphabet_x10(void)
