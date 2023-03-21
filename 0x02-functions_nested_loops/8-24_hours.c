@@ -21,7 +21,7 @@ void printComposite(int n)
 void printNormal(int n)
 {
 	_putchar('0');
-	_putchar('0' + h);
+	_putchar('0' + n);
 }
 
 /**
