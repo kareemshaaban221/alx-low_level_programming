@@ -41,6 +41,13 @@ void print_times_table(int n)
 {
 	int i, j, tmp;
 
+	if (n == 0)
+	{
+		_putchar('0');
+		_putchar('\n');
+		return;
+	}
+
 	if (n > 15 || n < 0)
 		return;
 
