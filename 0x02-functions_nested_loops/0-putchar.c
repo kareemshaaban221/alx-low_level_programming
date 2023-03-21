@@ -1,4 +1,4 @@
-#include "_putchar.c"
+#include "main.h"
 
 /* betty style doc for function main goes there */
 /**
