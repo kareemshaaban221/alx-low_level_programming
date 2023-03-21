@@ -62,7 +62,7 @@ void print_times_table(int n)
 				_putchar('0' + tmp);
 			}
 
-			if (j != n - 1)
+			if (j != n)
 				_putchar(',');
 		}
 
