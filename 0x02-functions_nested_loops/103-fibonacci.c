@@ -9,8 +9,6 @@ int main(void)
 {
 	long n1 = 1, n2 = 2, tmp, sum = 2;
 
-	int i;
-
 	while (n1 + n2 <= 4000000)
 	{
 		tmp = n1 + n2;
