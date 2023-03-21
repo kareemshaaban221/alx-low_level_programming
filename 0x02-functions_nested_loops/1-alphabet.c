@@ -1,14 +1,17 @@
 #include "main.h"
 
-/* betty style doc for function main goes there */
 /**
  * main - Entry point
  * Description: 'main function'
  * Return: 0 (success)
  */
-int main(void)
+void print_alphabet(void)
 {
-	print_alphabet();
+	char c;
 
-	return (0);
+	for (c = 'a'; c <= 'z'; c++)
+	{
+		_putchar(c);
+	}
+	_putchar('\n');
 }
