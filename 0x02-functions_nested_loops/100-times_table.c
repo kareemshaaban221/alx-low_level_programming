@@ -37,12 +37,12 @@ void print_times_table(int n)
 	if (n > 15 || n < 0)
 		return;
 
-	for (i = 0; i < n; i++)
+	for (i = 0; i < n + 1; i++)
 	{
 		tmp = 0;
 		_putchar('0');
 		_putchar(',');
-		for (j = 1; j < n; j++)
+		for (j = 1; j < n + 1; j++)
 		{
 			tmp += i;
 
