@@ -8,7 +8,14 @@
  */
 void printComposite(int n)
 {
-	_putchar('0' + n / 10);
+	int fdig = n / 10;
+
+	if (fdig >= 10)
+	{
+		_putchar('0' + fdig / 10);
+		fdig %= 10;
+	}
+	_putchar('0' + fdig);
 	_putchar('0' + n % 10);
 }
 
