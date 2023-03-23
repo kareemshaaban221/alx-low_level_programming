@@ -3,7 +3,8 @@
 
 /**
  * _isupper - check the code for Holberton School students.
- * @c: char
+ * @a: char
+ * @b: djgs
  * Return: Always 0.
  */
 int mul(int a, int b)
