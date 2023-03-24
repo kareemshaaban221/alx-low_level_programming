@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
 
 /**
  * printComposite - Entry point
@@ -50,5 +50,7 @@ void more_numbers(void)
 			else
 				printComposite(i);
 		}
+		_putchar('\n');
 	}
+	_putchar('\n');
 }
