@@ -28,7 +28,6 @@ void printComposite(int n)
  */
 void printNormal(int n)
 {
-	_putchar('0');
 	_putchar('0' + n);
 }
 
@@ -52,5 +51,4 @@ void more_numbers(void)
 		}
 		_putchar('\n');
 	}
-	_putchar('\n');
 }
