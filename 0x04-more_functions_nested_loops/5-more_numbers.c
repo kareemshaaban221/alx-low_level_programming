@@ -9,26 +9,9 @@
  */
 void printComposite(int n)
 {
-	int fdig = n / 10;
-
-	if (fdig >= 10)
-	{
-		_putchar('0' + fdig / 10);
-		fdig %= 10;
-	}
-	_putchar('0' + fdig);
+	if (n >= 10)
+		_putchar('0' + n / 10);
 	_putchar('0' + n % 10);
-}
-
-/**
- * printNormal - Entry point
- * Description: 'main function'
- * @n: normal integer
- * Return: void (success)
- */
-void printNormal(int n)
-{
-	_putchar('0' + n);
 }
 
 /**
@@ -44,10 +27,7 @@ void more_numbers(void)
 	{
 		for (i = 0; i <= 14; i++)
 		{
-			if (i < 10)
-				printNormal(i);
-			else
-				printComposite(i);
+			printComposite(i);
 		}
 		_putchar('\n');
 	}
