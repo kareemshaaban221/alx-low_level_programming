@@ -40,4 +40,5 @@ void print_number(int n)
 		_putchar('0' + ((n / div) % 10));
 		div /= 10;
 	}
+	_putchar('\n');
 }
