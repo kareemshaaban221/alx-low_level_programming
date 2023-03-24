@@ -9,36 +9,22 @@
  */
 void print_number(int n)
 {
-	int fdig, len = 1, i, div;
+	unsigned int u, i;
 
 	if (n < 0)
 	{
-		n = -n;
+		u = -n;
 		_putchar('-');
 	}
-
-	fdig = n / 10;
-	len = 1;
-
-	while (fdig)
+	else
 	{
-		len++;
-		fdig /= 10;
+		u = n;
 	}
 
-	for (i = 0, div = 10; i < len - 2; i++)
-		div *= 10;
-
-	if (len == 1)
-	{
-		_putchar('0' + n);
-		return;
-	}
-
-	while (div > 0)
-	{
-		_putchar('0' + ((n / div) % 10));
-		div /= 10;
-	}
-	_putchar('\n');
+	i = 1000000000;
+	do {
+		if (i <= u || i == 1)
+			_putchar(u / i % 10 + '0');
+		i /= 10;
+	} while (i != 0);
 }
