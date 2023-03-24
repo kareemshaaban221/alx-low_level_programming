@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_number - Entry point
@@ -8,13 +9,16 @@
  */
 void print_number(int n)
 {
+	int fdig, len = 1, i, div;
+
 	if (n < 0)
 	{
 		n = -n;
 		_putchar('-');
 	}
 
-	int fdig = n / 10, len = 1, i;
+	fdig = n / 10;
+	len = 1;
 
 	while (fdig)
 	{
@@ -22,14 +26,18 @@ void print_number(int n)
 		fdig /= 10;
 	}
 
-	char arr[len];
+	for (i = 0, div = 10; i < len - 2; i++)
+		div *= 10;
 
-	fdig = n;
-	for (i = 0; i < len; i++)
+	if (len == 1)
 	{
-		arr[i] = fdig % 10;
-		fdig /= 10;
+		_putchar('0' + n);
+		return;
 	}
-	for (i = len - 1; i >= 0; i--)
-		_putchar('0' + arr[i]);
+
+	while (div > 0)
+	{
+		_putchar('0' + ((n / div) % 10));
+		div /= 10;
+	}
 }
