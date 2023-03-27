@@ -3,7 +3,7 @@
 /**
  * _strlen - function
  * @s: pointer
- * return: len
+ * Return: int len
  */
 int _strlen(char *s)
 {
