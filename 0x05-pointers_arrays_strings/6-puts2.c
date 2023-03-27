@@ -14,11 +14,12 @@ void puts2(char *str)
 		if (i == 1)
 		{
 			i = 0;
+			str++;
 			continue;
 		}
 		_putchar(*str);
 		str++;
-		i++;
+		i = 1;
 	}
 
 	_putchar('\n');
