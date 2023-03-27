@@ -19,12 +19,12 @@ int _strlen(char *s)
 }
 
 /**
- * swap_int - function
+ * swap_char - function
  * @a: pointer
  * @b: pointer
  * return: void
  */
-void swap_int(int *a, int *b)
+void swap_char(char *a, char *b)
 {
 	*a = *a + *b;
 	*b = *a - *b;
@@ -39,9 +39,13 @@ void swap_int(int *a, int *b)
 void rev_string(char *s)
 {
 	int n = _strlen(s), i;
+	char *c1;
+	char *c2;
 
 	for (i = 0; i < n / 2; i++)
 	{
-		swap_int(s + i, s + n - i - 1);
+		c1 = s + i;
+		c2 = s + n - i - 1;
+		swap_char(c1, c2);
 	}
 }
