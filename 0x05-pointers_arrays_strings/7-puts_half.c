@@ -29,7 +29,7 @@ void puts_half(char *s)
 
 	if (len % 2 == 1)
 		odd = 1;
-	for (i = len - 1; i >= len / 2 + odd; i--)
+	for (i = len / 2 + odd; i < len; i++)
 	{
 		_putchar(*(s + i));
 	}
