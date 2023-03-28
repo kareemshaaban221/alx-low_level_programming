@@ -31,7 +31,8 @@ int toInteger(char *s, char *e, int negn)
  */
 int _atoi(char *s)
 {
-	char *tmp, negn = 0;
+	char *tmp;
+	int negn = 0;
 
 	while ((*s < '0' || *s > '9') && *s != '\0')
 	{
