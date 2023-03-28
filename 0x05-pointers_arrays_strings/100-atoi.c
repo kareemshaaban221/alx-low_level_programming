@@ -6,13 +6,16 @@
  * @e: end pointer
  * Return: integer
  */
-int toInteger(char *s, char *e)
+int toInteger(char *s, char *e, int negn)
 {
 	int w = 1, res = 0;
 
 	while (e >= s)
 	{
-		res += ((*(e) - '0') * w);
+		if (ngen == -1)
+			res -= ((*(e) - '0') * w);
+		else
+			res += ((*(e) - '0') * w);
 		if (e != s)
 			w *= 10;
 		e--;
@@ -48,5 +51,6 @@ int _atoi(char *s)
 		negn = -1;
 	else
 		negn = 1;
-	return (toInteger(s, tmp) * negn);
+
+	return (toInteger(s, tmp, negn));
 }
