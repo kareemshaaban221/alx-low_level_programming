@@ -12,7 +12,7 @@ int toInteger(char *s, char *e, int negn)
 
 	while (e >= s)
 	{
-		if (ngen == -1)
+		if (negn == -1)
 			res -= ((*(e) - '0') * w);
 		else
 			res += ((*(e) - '0') * w);
