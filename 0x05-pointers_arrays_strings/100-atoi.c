@@ -4,6 +4,7 @@
  * toInteger - to inetger
  * @s: start pointer
  * @e: end pointer
+ * @negn: negation
  * Return: integer
  */
 int toInteger(char *s, char *e, int negn)
