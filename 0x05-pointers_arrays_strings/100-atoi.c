@@ -13,7 +13,8 @@ int toInteger(char *s, char *e)
 	while (e >= s)
 	{
 		res += ((*(e) - '0') * w);
-		w *= 10;
+		if (e != s)
+			w *= 10;
 		e--;
 	}
 
