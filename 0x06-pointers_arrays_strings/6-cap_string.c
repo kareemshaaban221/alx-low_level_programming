@@ -28,6 +28,11 @@ char *cap_string(char *s)
 {
 	char *ss = s;
 
+	if (*ss >= 'a' && *ss <= 'z')
+		*ss -= ('a' - 'A');
+
+	ss++;
+
 	while (*ss != '\0')
 	{
 		while (check(*ss) == 1 && *ss != '\0')
