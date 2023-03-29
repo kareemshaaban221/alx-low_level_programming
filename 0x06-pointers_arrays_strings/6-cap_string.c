@@ -30,7 +30,11 @@ char *cap_string(char *s)
 
 	while (*ss != '\0')
 	{
-		if (check(*ss) == 1)
+		if (*ss == '\t')
+		{
+			*ss = ' ';
+		}
+		else if (check(*ss) == 1)
 		{
 			ss++;
 			while (check(*ss) == 1)
