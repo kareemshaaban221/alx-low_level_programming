@@ -24,7 +24,11 @@ char *_strncpy(char *dest, char *src, int n)
 	}
 
 	if (flag == 1 || n > 0)
-		*res = '\0';
+		while (n--)
+		{
+			*res = '\0';
+			res++;
+		}
 
 	return (dest);
 }
