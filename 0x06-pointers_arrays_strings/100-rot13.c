@@ -9,10 +9,8 @@ int check(char ss)
 {
 	char *v = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	if (ss >= 'A' && ss <= 'Z')
-		ss = v[ss - 'A'];
-	else if (ss >= 'a' && ss <= 'z')
-		ss = v[ss - 'a' + 26];
+	ss = (ss >= 'A' && ss <= 'Z') ? v[ss - 'A'] : ss;
+	ss = (ss >= 'a' && ss <= 'z') ? v[ss - 'a' + 26] : ss;
 
 	return (ss);
 }
