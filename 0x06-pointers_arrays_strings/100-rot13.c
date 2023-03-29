@@ -7,10 +7,20 @@
  */
 int check(char ss)
 {
+	char *s = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char *v = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	ss = (ss >= 'A' && ss <= 'Z') ? v[ss - 'A'] : ss;
-	ss = (ss >= 'a' && ss <= 'z') ? v[ss - 'a' + 26] : ss;
+	while (*s != '\0')
+	{
+		if (*s == ss)
+		{
+			ss = *v;
+			break;
+		}
+
+		s++;
+		v++;
+	}
 
 	return (ss);
 }
