@@ -14,7 +14,7 @@ void print_diagsums(int *a, int size)
 	int sum1 = a[dia];
 	int sum2;
 
-	for (i = size; i <= size * size; i += size)
+	for (i = size; i < size * size; i += size)
 	{
 		dia += size + 1;
 		sum1 += a[dia];
@@ -23,7 +23,7 @@ void print_diagsums(int *a, int size)
 	dia = size - 1;
 	sum2 = a[dia];
 
-	for (i = size; i <= size * size; i += size)
+	for (i = size; i < size * size; i += size)
 	{
 		dia += size - 1;
 		sum2 += a[dia];
