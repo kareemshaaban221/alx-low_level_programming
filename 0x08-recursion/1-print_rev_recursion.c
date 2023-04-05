@@ -13,7 +13,7 @@ char *ss = s;
 
 if (*ss != '\0')
 {
-_puts_recursion(++ss);
+_print_rev_recursion(++ss);
 _putchar(*ss);
 return;
 }
