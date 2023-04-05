@@ -32,8 +32,6 @@ return (-1);
  */
 int _sqrt_recursion(int n)
 {
-int i = 2;
-
 if (n == 1 || n == 0)
 return (n);
 else if (n < 4)
