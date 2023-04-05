@@ -15,7 +15,7 @@ if (*ss != '\0')
 {
 _print_rev_recursion(++ss);
 _putchar(*ss);
-if (*(ss + 1) == '\0')
+if (*(ss + 1) == '\0' && *ss != '\n')
 {
 *(ss + 1) = '\n';
 *(ss + 2) = '\0';
