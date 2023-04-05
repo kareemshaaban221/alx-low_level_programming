@@ -14,6 +14,8 @@ if (pow < n)
 {
 if (pow * pow < n)
 return (_sqrt_recursion_helper(n, pow + 1));
+else if (pow * pow == n)
+return (pow);
 else
 return (_sqrt_recursion_helper(n, i + 1));
 }
