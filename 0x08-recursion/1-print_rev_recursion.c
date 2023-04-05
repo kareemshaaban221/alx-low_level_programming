@@ -13,15 +13,8 @@ char *ss = s;
 
 if (*ss != '\0')
 {
-if (*(ss + 1) == '\0' && *ss != '\n')
-{
-*(ss + 1) = '\n';
-*(ss + 2) = '\0';
-}
-_print_rev_recursion(++ss);
+_print_rev_recursion(ss + 1);
 _putchar(*ss);
-
-return;
 }
 
 }
