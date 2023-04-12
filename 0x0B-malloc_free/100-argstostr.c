@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * _strlen - function
@@ -42,7 +43,7 @@ return (NULL);
 for (i = 0; i < ac; i++)
 len += _strlen(av[i]) + 1;
 
-res = malloc(len + 1);
+res = malloc(sizeof(char) * (len + 1));
 
 if (res == NULL)
 return (NULL);
