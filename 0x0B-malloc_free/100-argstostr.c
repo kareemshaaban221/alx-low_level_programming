@@ -31,7 +31,7 @@ return (len);
 */
 char *argstostr(int ac, char **av)
 {
-int len = 0;
+int len;
 char *res;
 int i, j;
 int tmplen;
@@ -39,8 +39,9 @@ int tmplen;
 if (ac == 0 || av == NULL)
 return (NULL);
 
-for (i = 0; i < ac; i++)
-len += _strlen(av[i]);
+len = _strlen(av[0]);
+for (i = 1; i < ac; i++)
+len += _strlen(av[i]) + 1;
 
 res = malloc(len + 1);
 
@@ -51,7 +52,11 @@ tmplen = 0;
 for (i = 0; i < ac; i++)
 {
 if (i > 0)
+{
 tmplen += _strlen(av[i - 1]);
+res[tmplen] = '\n';
+tmplen++;
+}
 
 for (j = 0; j < _strlen(av[i]); j++)
 res[tmplen + j] = av[i][j];
