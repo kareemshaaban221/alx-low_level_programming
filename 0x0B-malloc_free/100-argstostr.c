@@ -43,7 +43,7 @@ len = _strlen(av[0]);
 for (i = 1; i < ac; i++)
 len += _strlen(av[i]) + 1;
 
-res = malloc(len + 1);
+res = malloc(++len + 1);
 
 if (res == NULL)
 return (NULL);
@@ -62,7 +62,8 @@ for (j = 0; j < _strlen(av[i]); j++)
 res[tmplen + j] = av[i][j];
 }
 
-res[len] = '\0';
+res[len] = '\n';
+res[len + 1] = '\0';
 
 return (res);
 }
