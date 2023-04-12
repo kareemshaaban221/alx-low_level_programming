@@ -39,11 +39,10 @@ int tmplen;
 if (ac == 0 || av == NULL)
 return (NULL);
 
-len = _strlen(av[0]);
-for (i = 1; i < ac; i++)
+for (i = 0; i < ac; i++)
 len += _strlen(av[i]) + 1;
 
-res = malloc(++len + 1);
+res = malloc(len + 1);
 
 if (res == NULL)
 return (NULL);
@@ -53,16 +52,15 @@ for (i = 0; i < ac; i++)
 {
 if (i > 0)
 {
-tmplen += _strlen(av[i - 1]);
-res[tmplen] = '\n';
-tmplen++;
+tmplen += _strlen(av[i - 1]) + 1;
 }
 
 for (j = 0; j < _strlen(av[i]); j++)
 res[tmplen + j] = av[i][j];
+
+res[tmplen + j + 1] = '\n';
 }
 
-res[len] = '\n';
 res[len + 1] = '\0';
 
 return (res);
