@@ -58,7 +58,7 @@ tmplen += _strlen(av[i - 1]) + 1;
 for (j = 0; j < _strlen(av[i]); j++)
 res[tmplen + j] = av[i][j];
 
-res[tmplen + j + 1] = '\n';
+res[tmplen + j] = '\n';
 }
 
 res[len + 1] = '\0';
