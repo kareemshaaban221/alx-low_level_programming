@@ -37,13 +37,6 @@ int i;
 if (str == NULL)
 return (NULL);
 
-if (len <= 0)
-{
-res = malloc(1);
-res[0] = '\0';
-return (res);
-}
-
 res = malloc(sizeof(char) * (len + 1));
 
 if (res == NULL)
