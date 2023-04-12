@@ -24,6 +24,9 @@ res[i] = malloc(sizeof(int) * width);
 
 if (res[i] == NULL)
 {
+while (i >= 0)
+free(res[i--]);
+
 free(res);
 return (NULL);
 }
