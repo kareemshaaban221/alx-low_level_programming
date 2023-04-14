@@ -24,31 +24,31 @@ return (len);
 }
 
 /**
- * max - concate
+ * min - concate
  * @a: the string to concatenate
  * @b: the string to conc
  * Return: the concatenated string
 */
-int max(int a, int b)
+int min(int a, int b)
 {
-if (a >= b)
+if (a <= b)
 return (a);
 else
 return (b);
 }
 
 /**
- * str_concat - concate
+ * string_nconcat - concate
  * @s1: the string to concatenate
  * @s2: the string to conc
  * @n: the number of characters to conc
  * Return: the concatenated string
 */
-char *str_concat(char *s1, char *s2, unsigned int n)
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 int len1 = _strlen(s1);
 int len2 = _strlen(s2);
-char *res = malloc((len1 + max(len2, n) + 1) * sizeof(char));
+char *res = malloc((len1 + min(len2, n) + 1) * sizeof(char));
 int i;
 
 if (res == NULL)
@@ -57,7 +57,7 @@ return (NULL);
 for (i = 0; i < len1; i++)
 res[i] = s1[i];
 
-for (i = 0; i < max(len2, n); i++)
+for (i = 0; i < min(len2, n); i++)
 res[i + len1] = s2[i];
 
 res[len1 + i + 1] = '\0';
