@@ -60,7 +60,7 @@ res[i] = s1[i];
 for (i = 0; i < min(len2, n); i++)
 res[i + len1] = s2[i];
 
-res[len1 + i + 1] = '\0';
+res[len1 + i] = '\0';
 
 return (res);
 }
