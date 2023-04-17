@@ -1,5 +1,24 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "dog.h"
+
+/**
+ * _strlen - function
+ * @s: pointer
+ * Return: int len
+ */
+int _strlen(char *s)
+{
+int len = 0;
+
+while (*s != '\0')
+{
+len++;
+s++;
+}
+
+return (len);
+}
 
 /**
  * _strcpy - function
@@ -32,9 +51,9 @@ return (res);
 */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-dog_t *res;
-char *nname;
-char *oowner;
+dog_t *res = malloc(sizeof(dog_t));
+char *nname = malloc(sizeof(char) * _strlen(name));
+char *oowner = malloc(sizeof(char) * _strlen(owner));
 
 res->name = _strcpy(nname, name);
 res->owner = _strcpy(oowner, owner);
