@@ -52,8 +52,12 @@ return (NULL);
 for (i = 0; i < _strlen(name); i++)
 res->name[i] = name[i];
 
+res->name[i] = '\0';
+
 for (i = 0; i < _strlen(owner); i++)
 res->owner[i] = owner[i];
+
+res->owner[i] = '\0';
 
 res->age = age;
 
