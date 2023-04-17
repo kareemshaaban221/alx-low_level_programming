@@ -67,6 +67,14 @@ res->name = _strcpy(nname, name);
 res->owner = _strcpy(oowner, owner);
 res->age = age;
 
+if (!res->name || !res->owner)
+{
+free(res);
+free(nname);
+free(oowner);
+return (NULL);
+}
+
 free(nname);
 free(oowner);
 
