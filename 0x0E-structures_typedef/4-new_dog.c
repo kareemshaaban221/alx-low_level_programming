@@ -38,8 +38,8 @@ free(res);
 return (NULL);
 }
 
-res->name = malloc(sizeof(char) * _strlen(name) + 1);
-res->owner = malloc(sizeof(char) * _strlen(owner) + 1);
+res->name = malloc(strlen(name) + 1);
+res->owner = malloc(strlen(owner) + 1);
 
 if (!res->name || !res->owner)
 {
