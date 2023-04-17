@@ -55,9 +55,20 @@ dog_t *res = malloc(sizeof(dog_t));
 char *nname = malloc(sizeof(char) * _strlen(name));
 char *oowner = malloc(sizeof(char) * _strlen(owner));
 
+if (!res || !name || !owner || !nname || !oowner)
+{
+free(res);
+free(nname);
+free(oowner);
+return (NULL);
+}
+
 res->name = _strcpy(nname, name);
 res->owner = _strcpy(oowner, owner);
 res->age = age;
+
+free(nname);
+free(oowner);
 
 return (res);
 }
