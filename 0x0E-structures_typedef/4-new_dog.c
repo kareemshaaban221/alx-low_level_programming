@@ -43,6 +43,8 @@ res->owner = malloc(sizeof(char) * _strlen(owner));
 
 if (!res->name || !res->owner)
 {
+free(res->name);
+free(res->owner);
 free(res);
 return (NULL);
 }
