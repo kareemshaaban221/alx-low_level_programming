@@ -1,4 +1,6 @@
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 #include "3-calc.h"
 
 /**
@@ -18,12 +20,12 @@ op_t ops[] = {
 };
 int i = 0;
 
-if (!s)
+if (s == NULL)
 return (NULL);
 
 while (ops[i].op)
 {
-if (ops[i].op == s)
+if (strcmp(ops[i].op, s) == 0)
 {
 return (ops[i].f);
 }
