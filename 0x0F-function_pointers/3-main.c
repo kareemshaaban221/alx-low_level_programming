@@ -11,7 +11,7 @@
 int main(int argc, char **argv)
 {
 int n1, n2, res;
-char op;
+char *op;
 
 if (argc < 4)
 {
@@ -23,13 +23,13 @@ n1 = atoi(argv[1]);
 op = argv[2];
 n2 = atoi(argv[3]);
 
-if (op != '+' || op != '-' || op != '*' || op != '/' || op != '%')
+if (*op != '+' || *op != '-' || *op != '*' || *op != '/' || *op != '%')
 {
 printf("Error\n");
 exit(99);
 }
 
-if ((op == '/' || op == '%') && (n2 == 0))
+if ((*op == '/' || *op == '%') && (n2 == 0))
 {
 printf("Error\n");
 exit(100);
