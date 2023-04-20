@@ -10,7 +10,7 @@
 */
 int main(int argc, char **argv)
 {
-int n1, n2, res;
+int n1, n2, res = 0;
 char *op;
 
 if (argc < 4)
@@ -35,6 +35,7 @@ printf("Error\n");
 exit(100);
 }
 
+if (get_op_func(op))
 res = (get_op_func(op))(n1, n2);
 
 printf("%d\n", res);
