@@ -25,7 +25,7 @@ return (NULL);
 
 while (ops[i].op)
 {
-if (strcmp(ops[i].op, s) == 0)
+if (ops[i].op == s)
 {
 return (ops[i].f);
 }
