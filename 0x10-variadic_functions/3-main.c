@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-    print_all("e");
+    print_all("e", 5);
     return (0);
 }
