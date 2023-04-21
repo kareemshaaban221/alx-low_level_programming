@@ -58,7 +58,7 @@ void print_all(const char * const format, ...)
     n = _strlen((char *) format);
     va_start(args, format);
     i = 0;
-    while (i < n)
+    while (i < n && format[i])
     {
         if (i > 0 && inTarget(format[i]) == 1)
             printf(", ");
@@ -80,8 +80,6 @@ void print_all(const char * const format, ...)
         default:
             break;
         }
-        if (!format[i])
-            break;
         i++;
     }
     ending(args);
