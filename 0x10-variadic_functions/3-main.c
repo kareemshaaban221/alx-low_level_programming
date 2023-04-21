@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-    print_all("fs", 30.555555, (char *) 0);
+    print_all((char *) 0);
     return (0);
 }

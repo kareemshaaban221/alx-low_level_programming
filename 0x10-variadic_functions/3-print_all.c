@@ -47,9 +47,15 @@ int inTarget(char c)
 */
 void print_all(const char * const format, ...)
 {
-    unsigned int i, n = _strlen((char *) format);
+    unsigned int i, n;
     char *tmp;
     va_list args;
+    if (!format)
+    {
+        printf("\n");
+        return;
+    }
+    n = _strlen((char *) format);
     va_start(args, format);
     i = 0;
     while (i < n)
@@ -70,8 +76,6 @@ void print_all(const char * const format, ...)
             case 's':
                 tmp = va_arg(args, char *);
                 printf("%s", tmp == NULL ? "(nil)" : tmp);
-                break;
-            default:
                 break;
         }
         i++;
