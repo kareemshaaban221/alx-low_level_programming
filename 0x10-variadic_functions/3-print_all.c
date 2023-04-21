@@ -77,6 +77,8 @@ void print_all(const char * const format, ...)
                 tmp = va_arg(args, char *);
                 printf("%s", tmp == NULL ? "(nil)" : tmp);
                 break;
+            default:
+                break;
         }
         i++;
     }
