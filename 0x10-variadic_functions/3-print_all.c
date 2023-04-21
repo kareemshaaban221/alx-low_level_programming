@@ -60,8 +60,6 @@ void print_all(const char * const format, ...)
     i = 0;
     while (i < n)
     {
-        if (!format[i])
-            break;
         if (i > 0 && inTarget(format[i]) == 1)
             printf(", ");
         switch (format[i])
