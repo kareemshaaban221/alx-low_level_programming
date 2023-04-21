@@ -48,6 +48,7 @@ int inTarget(char c)
 void print_all(const char * const format, ...)
 {
     unsigned int i, n = _strlen((char *) format);
+    char *tmp;
     va_list args;
     va_start(args, format);
     i = 0;
@@ -67,7 +68,8 @@ void print_all(const char * const format, ...)
                 printf("%f", va_arg(args, double));
                 break;
             case 's':
-                printf("%s", va_arg(args, char *));
+                tmp = va_arg(args, char *);
+                printf("%s", tmp == NULL ? "(nil)" : tmp);
                 break;
             default:
                 break;
