@@ -47,7 +47,7 @@ return (c == 'c' || c == 'i' || c == 'f' || c == 's' ? 1 : 0);
 */
 void print_all(const char * const format, ...)
 {
-unsigned int i, n;
+unsigned int i, n, flag = 0;
 char *tmp;
 va_list args;
 if (!format)
@@ -60,20 +60,24 @@ va_start(args, format);
 i = 0;
 while (i < n)
 {
-if (i > 0 && inTarget(format[i]) == 1)
+if (flag == 1 && inTarget(format[i]) == 1)
 printf(", ");
 switch (format[i])
 {
 case 'c':
+flag = 1;
 printf("%c", va_arg(args, int));
 break;
 case 'i':
+flag = 1;
 printf("%d", va_arg(args, int));
 break;
 case 'f':
+flag = 1;
 printf("%f", va_arg(args, double));
 break;
 case 's':
+flag = 1;
 tmp = va_arg(args, char *);
 printf("%s", tmp == NULL ? "(nil)" : tmp);
 break;
