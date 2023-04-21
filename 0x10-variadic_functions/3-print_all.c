@@ -37,7 +37,7 @@ va_end(args);
 */
 int inTarget(char c)
 {
-return c == 'c' || c == 'i' || c == 'f' || c == 's' ? 1 : 0;
+return (c == 'c' || c == 'i' || c == 'f' || c == 's' ? 1 : 0);
 }
 
 /**
