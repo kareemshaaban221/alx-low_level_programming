@@ -56,7 +56,7 @@ for (i = 0; i < ac; i++)
 for (j = 0; av[i][j]; j++)
 res[k++] = av[i][j];
 
-if(res[k] == '\0')
+if (res[k] == '\0')
 res[k++] = '\n';
 }
 
