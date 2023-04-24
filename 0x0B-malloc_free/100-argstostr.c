@@ -1,41 +1,64 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
+
 /**
- * argstostr - Main Entry
- * @ac: input
- * @av: input
- * Return: 0
+ * _strlen - function
+ * @s: pointer
+ * Return: int len
  */
+int _strlen(char *s)
+{
+char *ss = s;
+int len = 0;
+
+if (s == NULL)
+return (0);
+
+while (*ss != '\0')
+{
+len++;
+ss++;
+}
+
+return (len);
+}
+
+/**
+ * argstostr - concate
+ * @ac: the string to concatenate
+ * @av: the string to conc
+ * Return: the concatenated string
+*/
 char *argstostr(int ac, char **av)
 {
-int i, n, k = 0, len = 0;
-char *str;
+int len;
+char *res;
+int i, j, k;
 
 if (ac == 0 || av == NULL)
 return (NULL);
 
 for (i = 0; i < ac; i++)
-{
-for (n = 0; av[i][n]; n++)
+for (j = 0; av[i][j]; j++)
 len++;
-}
+
 len += ac;
 
-str = malloc(sizeof(char) * len + 1);
-if (str == NULL)
+res = malloc(sizeof(char) * (len + 1));
+
+if (res == NULL)
 return (NULL);
 
+k = 0;
 for (i = 0; i < ac; i++)
 {
-for (n = 0; av[i][n]; n++)
-{
-str[k] = av[i][n];
-k++;
+for (j = 0; av[i][j]; j++)
+res[k++] = av[i][j];
+
+if(res[k] == '\0')
+res[k++] = '\n';
 }
-if (str[k] == '\0')
-{
-str[k++] = '\n';
-}
-}
-return (str);
+
+return (res);
 }
