@@ -56,7 +56,7 @@ res[k++] = av[i][j];
 res[k] = '\n';
 }
 
-res[k] = '\0';
+res[++k] = '\0';
 
 return (res);
 }
