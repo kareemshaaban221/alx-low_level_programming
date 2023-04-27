@@ -42,9 +42,14 @@ list_t *add_node_end(list_t **head, const char *str)
     else
     {
         h = *head;
-        while (h)
-            h = h->next;
-        h = res;
+        if (h)
+        {
+            while (h->next)
+                h = h->next;
+            h->next = res;
+        }
+        else
+            h = res;
     }
 
     return (res);
