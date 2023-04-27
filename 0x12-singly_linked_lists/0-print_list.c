@@ -5,7 +5,7 @@
  * @h: asgkd
  * Return: int
 */
-int print_node(list_t *h)
+int print_node(const list_t *h)
 {
 if (h->str == NULL)
 printf("[%d] %s\n", 0, "(nil)");
@@ -21,9 +21,9 @@ return (1);
  * @print: asgdap
  * Return: size_t
 */
-size_t print_list_handle(const list_t *h, int (*print)(list_t *))
+size_t print_list_handle(const list_t *h, int (*print)(const list_t *))
 {
-list_t *p = h;
+const list_t *p = h;
 size_t n = 0;
 
 while (p)
