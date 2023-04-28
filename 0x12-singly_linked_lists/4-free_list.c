@@ -11,5 +11,7 @@ if (head == NULL) /* base condition */
 return;
 
 free_list(head->next);
+if (head->str)
+free(head->str);
 free(head);
 }
