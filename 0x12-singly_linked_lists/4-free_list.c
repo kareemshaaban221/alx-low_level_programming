@@ -7,9 +7,9 @@
 */
 void free_list(list_t *head)
 {
-    if (!head) /* base condition */
-        return;
+if (head == NULL) /* base condition */
+return;
 
-    free_list(head->next);
-    free(head);
+free_list(head->next);
+free(head);
 }
