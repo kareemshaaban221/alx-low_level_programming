@@ -1,5 +1,4 @@
 	.file	"101-second.c"
-	.intel_syntax noprefix
 	.text
 	.section	.rodata
 .LC0:
@@ -11,20 +10,20 @@ main:
 .LFB0:
 	.cfi_startproc
 	endbr64
-	push	rbp
+	pushq	%rbp
 	.cfi_def_cfa_offset 16
 	.cfi_offset 6, -16
-	mov	rbp, rsp
+	movq	%rsp, %rbp
 	.cfi_def_cfa_register 6
-	sub	rsp, 16
-	lea	rax, .LC0[rip]
-	mov	QWORD PTR -8[rbp], rax
-	mov	rax, QWORD PTR -8[rbp]
-	mov	edx, 18
-	mov	rsi, rax
-	mov	edi, 1
+	subq	$16, %rsp
+	leaq	.LC0(%rip), %rax
+	movq	%rax, -8(%rbp)
+	movq	-8(%rbp), %rax
+	movl	$18, %edx
+	movq	%rax, %rsi
+	movl	$1, %edi
 	call	write@PLT
-	mov	eax, 0
+	movl	$0, %eax
 	leave
 	.cfi_def_cfa 7, 8
 	ret
