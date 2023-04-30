@@ -17,4 +17,6 @@ res = (*head)->n;
 tmp = (*head);
 (*head) = (*head)->next;
 free(tmp);
+
+return (res);
 }
