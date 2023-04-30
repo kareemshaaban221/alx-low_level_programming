@@ -30,4 +30,6 @@ return (h->next);
 }
 h = h->next;
 }
+
+return (NULL);
 }
