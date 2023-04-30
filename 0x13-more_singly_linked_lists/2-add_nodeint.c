@@ -5,31 +5,27 @@
  * @head: agjopdf
  * @n: aogjdos
  * Return: list
-*/
+ */
 listint_t *add_nodeint(listint_t **head, const int n)
 {
-listint_t *h = *head;
+    listint_t *h = *head;
 
-if (!h)
-{
-h = malloc(sizeof(listint_t));
-h->n = n;
-h->next = NULL;
-return (h);
-}
+    if (!h)
+    {
+        h = malloc(sizeof(listint_t));
+        h->n = n;
+        h->next = NULL;
+        return (h);
+    }
 
-while (h)
-{
-if (!h->next)
-{
-h->next = malloc(sizeof(listint_t));
-h->next->n = n;
-h->next->next = NULL;
+    while (h->next)
+    {
+        h = h->next;
+    }
 
-return (h->next);
-}
-h = h->next;
-}
+    h->next = malloc(sizeof(listint_t));
+    h->next->n = n;
+    h->next->next = NULL;
 
-return (NULL);
+    return (h->next);
 }
