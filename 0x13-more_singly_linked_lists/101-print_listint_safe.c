@@ -2,13 +2,14 @@
 
 /**
  * print_listint_safe - gasdklfn
- * @h: akgsdf
+ * @head: akgsdf
  * Return: gajsdpog
  */
 size_t print_listint_safe(const listint_t *head)
 {
 size_t len = 0;
-listint_t *s = (listint_t *) head, *e = (listint_t *) head, *h = (listint_t *) head;
+listint_t *s = (listint_t *) head, *e = (listint_t *) head;
+listint_t *h = (listint_t *) head;
 int f = 0;
 
 while (head)
