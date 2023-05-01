@@ -8,13 +8,13 @@
  */
 listint_t *create_node(listint_t *node, int n)
 {
-node = malloc(sizeof(listint_t));
-if (!node)
-return (NULL);
-node->n = n;
-node->next = NULL;
+    node = malloc(sizeof(listint_t));
+    if (!node)
+        return (NULL);
+    node->n = n;
+    node->next = NULL;
 
-return (node);
+    return (node);
 }
 
 /**
@@ -26,35 +26,34 @@ return (node);
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-unsigned int index = 0;
-listint_t *res = NULL, *tmp = NULL, *h;
+    unsigned int index = 0;
+    listint_t *res = NULL, *tmp = NULL, *h = *head;
 
-if (!*head)
-{
-if (idx == index)
-{
-res = create_node(res, n);
-*head = res;
-}
-return (res);
-}
+    if (!h)
+    {
+        if (idx == index)
+        {
+            res = create_node(res, n);
+            h = res;
+        }
+        return (res);
+    }
+    
+    while (h)
+    {
+        if (idx == index + 1)
+        {
+            tmp = h->next;
+            res = create_node(res, n);
+            (h)->next = res;
+            res->next = tmp;
 
-h = *head;
-while (h)
-{
-if (idx == index + 1)
-{
-tmp = (h)->next;
-res = create_node(res, n);
-(h)->next = res;
-res->next = tmp;
+            return (res);
+        }
 
-return (res);
-}
+        h = h->next;
+        index++;
+    }
 
-h = (h)->next;
-index++;
-}
-
-return (NULL);
+    return (NULL);
 }
