@@ -35,6 +35,7 @@ return (NULL);
 if (idx == index)
 {
 res = create_node(res, n);
+res->next = *head;
 *head = res;
 
 return (res);
