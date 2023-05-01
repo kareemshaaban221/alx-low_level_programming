@@ -18,27 +18,28 @@ return (node);
 }
 
 /**
- * insert_nodeint_at_index - ajigsd
- * @head: dsgjaop
- * @idx: aospd
- * @n: aopdfgjm
- * Return: aopdnm
- */
+* insert_nodeint_at_index - ajigsd
+* @head: dsgjaop
+* @idx: aospd
+* @n: aopdfgjm
+* Return: aopdnm
+*/
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 unsigned int index = 0;
-listint_t *res = NULL, *tmp = NULL, *h = *head;
+listint_t *res = NULL, *tmp = NULL, *h;
 
-if (!h)
+if (!*head)
 {
 if (idx == index)
 {
 res = create_node(res, n);
-h = res;
+*head = res;
 }
 return (res);
 }
 
+h = *head;
 while (h)
 {
 if (idx == index + 1)
