@@ -13,12 +13,13 @@ unsigned int i = 0;
 if (!head)
 return (NULL);
 
-while (head)
+while (head && i <= index)
 {
 if (i == index)
 return (head);
 
 head = head->next;
+i++;
 }
 
 return (NULL);
