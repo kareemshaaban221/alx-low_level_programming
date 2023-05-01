@@ -27,7 +27,7 @@ return (node);
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 unsigned int index = 0;
-listint_t *res = NULL, *tmp = NULL, *h, *pre;
+listint_t *res = NULL, *tmp = NULL, *h;
 
 if (!head)
 return (NULL);
@@ -42,22 +42,18 @@ return (res);
 }
 
 h = *head;
-pre = NULL;
 while (h)
 {
-if (idx == index)
+if (idx == index + 1)
 {
-tmp = h;
+tmp = h->next;
 res = create_node(res, n);
-h = res;
+h->next = res;
 res->next = tmp;
-if (pre)
-pre->next = res;
 
 return (res);
 }
 
-pre = h;
 h = h->next;
 index++;
 }
