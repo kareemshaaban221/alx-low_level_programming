@@ -44,11 +44,11 @@ return (res);
 h = *head;
 while (h)
 {
-if (idx == index + 1)
+if (idx == index)
 {
-tmp = h->next;
+tmp = h;
 res = create_node(res, n);
-(h)->next = res;
+h = res;
 res->next = tmp;
 
 return (res);
