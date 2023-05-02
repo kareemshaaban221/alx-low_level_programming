@@ -13,7 +13,6 @@ int main(int argc, char **argv)
 int n1, n2, res;
 char *op;
 
-printf("%d\n", argc);
 if (argc != 4)
 {
 printf("Error\n");
