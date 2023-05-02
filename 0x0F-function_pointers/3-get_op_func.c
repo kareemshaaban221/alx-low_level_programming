@@ -15,17 +15,14 @@ op_t ops[] = {
 {"-", op_sub},
 {"*", op_mul},
 {"/", op_div},
-{"%", op_mod},
+{"%%", op_mod},
 {NULL, NULL}
 };
 int i = 0;
 
-if (s == NULL)
-return (NULL);
-
 while (ops[i].op)
 {
-if (ops[i].op == s)
+if (ops[i].op[0] == s[0])
 {
 return (ops[i].f);
 }
