@@ -55,6 +55,9 @@ int len = _strlen((char *) b);
 if (len == -1)
 return (0);
 
+if (len == 0)
+return (0);
+
 if (len == 1)
 return (*b - '0');
 
