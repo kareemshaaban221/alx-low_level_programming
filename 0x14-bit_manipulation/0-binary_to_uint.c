@@ -48,7 +48,9 @@ return (x * _pow_recursion(x, y - 1));
 */
 unsigned int binary_to_uint(const char *b)
 {
-uint res = 0, len = _strlen(b), i = 0, max;
+uint res = 0, max;
+int i = 0;
+int len = _strlen((char *) b);
 
 if (len == -1)
 return (0);
