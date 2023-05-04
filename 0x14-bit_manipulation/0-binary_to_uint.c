@@ -30,7 +30,7 @@ return (len);
 *Return: The factorial of the integer if @n is non-negative. If @n is negative
 *returns -1 to indicate an error.
 */
-int _pow_recursion(int x, int y)
+uint _pow_recursion(int x, int y)
 {
 if (y < 0)
 return (-1);
