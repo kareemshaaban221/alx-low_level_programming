@@ -15,7 +15,7 @@ return (0);
 
 while (n && m)
 {
-if((n & 1) != (m & 1))
+if ((n & 1) != (m & 1))
 res++;
 
 n >>= 1;
