@@ -92,7 +92,7 @@ closeFiles(f1, f2);
 dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", filename);
 exit(99);
 }
-while (buffer[n] != EOF && buffer[n])
+while (n == 1024)
 {
 n = read(f1, buffer, sizeof(buffer));
 if (n == 0)
