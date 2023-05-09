@@ -72,7 +72,7 @@ return (f2);
  * @filename: adfjpoag
  * Return: adpgia
 */
-void readWrite(int f1, int f2, char *filename)
+int readWrite(int f1, int f2, char *filename)
 {
 int n, m;
 char buffer[1024];
@@ -106,6 +106,7 @@ dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", filename);
 exit(99);
 }
 }
+return (0);
 }
 
 /**
@@ -116,8 +117,8 @@ exit(99);
 */
 int main(int argc, char **argv)
 {
-int f1, f2, n, m;
-char buffer[1024];
+int f1, f2;
+
 if (argc != 3)
 {
 dprintf(STDOUT_FILENO, "Usage: cp file_from file_to\n");
@@ -130,6 +131,5 @@ dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", argv[1]);
 exit(98);
 }
 f2 = openFileCreate(argv[2], f1);
-readWrite(f1, f2, argv[2]);
-return (0);
+return (readWrite(f1, f2, argv[2]));
 }
