@@ -45,7 +45,7 @@ return (0);
 }
 
 /**
- * check_IO_stat - jgapsodjgpaojds
+ * check_stat - jgapsodjgpaojds
  * @stat: gpjasdopgaj
  * @filename: gaosdjgpoaga
  * @mode: ghaoisdhiga
