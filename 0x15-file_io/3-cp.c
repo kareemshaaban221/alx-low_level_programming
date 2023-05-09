@@ -25,22 +25,22 @@ dprintf(STDERR_FILENO, "%s", "Usage: cp file_from file_to\n");
 exit(97);
 }
 f1 = open(argv[1], O_RDONLY);
-check_IO_stat(f1, -1, argv[1], 'O');
+check_stat(f1, -1, argv[1], 'O');
 f2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, mode);
-check_IO_stat(f2, -1, argv[2], 'W');
+check_stat(f2, -1, argv[2], 'W');
 while (n == 1024)
 {
 n = read(f1, buffer, sizeof(buffer));
 if (n == -1)
-check_IO_stat(-1, -1, argv[1], 'O');
+check_stat(-1, -1, argv[1], 'O');
 m = write(f2, buffer, n);
 if (m == -1)
-check_IO_stat(-1, -1, argv[2], 'W');
+check_stat(-1, -1, argv[2], 'W');
 }
 n = close(f1);
-check_IO_stat(n, f1, NULL, 'C');
+check_stat(n, f1, NULL, 'C');
 m = close(f2);
-check_IO_stat(m, f2, NULL, 'C');
+check_stat(m, f2, NULL, 'C');
 return (0);
 }
 
