@@ -1,48 +1,46 @@
 #include "lists.h"
 
 /**
- * insert_dnodeint_at_index - test
- * @h: asjdg
- * @idx: magpoidsf
- * @n: adfgpoim
- * Return: int
+ * insert_dnodeint_at_index - function with three arguments
+ * @h: pointer to doubly linked list
+ * @idx: index position to insert node
+ * @n: value of new node
+ *
+ * Description: inserting new node into a doubly linked list
+ * Return: address of new node or NULL if failed
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-dlistint_t *node = NULL, *head = *h;
-unsigned int i = 0;
+dlistint_t *new, *cursor;
 
-if (!h)
+if (h == NULL)
+return (NULL);
+if (idx == 0)
+return (add_dnodeint(h, n));
+
+/* loop until nth node of idx */
+cursor = *h;
+while (idx > 1 && cursor && cursor->next)
+{
+cursor = cursor->next;
+idx--;
+}
+
+new = malloc(sizeof(dlistint_t));
+if (new == NULL)
+return (NULL);
+if (idx > 1 || cursor == NULL)
 return (NULL);
 
-if (!head || idx == 0)
-{
-node = add_dnodeint(h, n);
-return (node);
-}
+/* assign value to new node */
+new->n = n;
 
-node = malloc(sizeof(dlistint_t));
-if (!node)
-return (NULL);
-node->n = n;
+/* insert node */
+if (cursor->next != NULL)
+cursor->next->prev = new;
+new->prev = cursor;
+new->next = cursor->next;
+cursor->next = new;
 
-while (head)
-{
-if (!head->next)
-{
-node = add_dnodeint_end(h, n);
-return (node);
-}
-if (idx == i++)
-{
-node->next = head;
-node->prev = head->prev;
-head->prev = node;
-node->prev->next = node;
-return (node);
-}
-head = head->next;
-}
-
-return (NULL);
+return (new);
 }
