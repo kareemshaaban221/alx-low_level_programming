@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * add_dnodeint_end - test
+ * get_dnodeint_at_index - test
  * @head: asjdg
  * @index: aogjdspo
  * Return: dlistint_t
