@@ -22,6 +22,8 @@ return (node);
 }
 
 node = malloc(sizeof(dlistint_t));
+if (!node)
+return (NULL);
 node->n = n;
 
 while (head)
