@@ -1,24 +1,25 @@
 #include "lists.h"
 
-void print_size(int n) {
-    if (n <= 1)
-        printf("-> %d element\n", n);
-    else
-        printf("-> %d elements\n", n);
+/**
+ * print_dlistint - test
+ * @h: asjdg
+ * Return: size_t
+*/
+size_t print_dlistint(const dlistint_t *h)
+{
+int len = 0;
+
+if (!h)
+{
+return (0);
 }
 
-size_t print_dlistint(const dlistint_t *h) {
-    int len = 0;
+while (h)
+{
+printf("%d\n", h->n);
+len++;
+h = h->next;
+}
 
-    if (!h) {
-        return (0);
-    }
-
-    while (h) {
-        printf("%d\n", h->n);
-        len++;
-        h = h->next;
-    }
-
-    return (len);
+return (len);
 }
