@@ -1,0 +1,24 @@
+#include "lists.h"
+
+/**
+ * add_dnodeint_end - test
+ * @head: asjdg
+ * @index: aogjdspo
+ * Return: dlistint_t
+ */
+dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
+{
+    unsigned int i = 0;
+
+    if (!head)
+        return (NULL);
+    
+    while (head)
+    {
+        if (i == index)
+            return (head);
+        head = head->next;
+    }
+
+    return (NULL);
+}
