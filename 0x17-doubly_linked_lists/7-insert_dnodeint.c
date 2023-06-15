@@ -15,7 +15,7 @@ unsigned int i = 0;
 if (!h)
 return (NULL);
 
-if (head || idx == 0)
+if (!head || idx == 0)
 {
 node = add_dnodeint(h, n);
 return (node);
