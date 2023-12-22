@@ -40,7 +40,6 @@ if (strcmp(temp->key, key) == 0)
 free(temp->value);
 temp->value = to_be_stored->value;
 free(to_be_stored->key);
-free(to_be_stored->value);
 free(to_be_stored);
 return (1);
 }
