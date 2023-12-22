@@ -25,6 +25,9 @@ to_be_stored->key = strcpy(key_str, key);
 to_be_stored->value = strcpy(value_str, value);
 to_be_stored->next = NULL;
 
+if (!to_be_stored->key || !to_be_stored->value)
+return (0);
+
 if (!ht->array[index])
 ht->array[index] = to_be_stored;
 else
