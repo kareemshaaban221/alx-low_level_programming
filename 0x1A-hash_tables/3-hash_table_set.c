@@ -14,38 +14,29 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
     unsigned long int index = key_index((const unsigned char *)key, ht->size);
-    hash_node_t *temp = NULL;
+    hash_node_t *temp = ht->array[index];
     hash_node_t *to_be_stored = (hash_node_t *)malloc(sizeof(hash_node_t));
 
     if (!ht || !key || !(*key) || !value || !to_be_stored)
         return (0);
+
+    while (temp && strcmp(temp->key, key) != 0)
+        temp = temp->next;
+    if (temp)
+    {
+        free(temp->value);
+        temp->value = strdup(value);
+        free(to_be_stored);
+        return (1);
+    }
     
     to_be_stored->key = strdup(key);
     to_be_stored->value = strdup(value);
     to_be_stored->next = NULL;
 
-    if (!ht->array[index])
-        ht->array[index] = to_be_stored;
-    else
-    {
-        temp = ht->array[index];
-        while (temp)
-        {
-            if (strcmp(temp->key, key) == 0)
-            {
-                free(temp->value);
-                temp->value = strdup(value);
-                if (!temp->value)
-                    return (0);
-                free(to_be_stored);
-                return (1);
-            }
-            temp = temp->next;
-        }
-        temp = ht->array[index];
-        ht->array[index] = to_be_stored;
-        to_be_stored->next = temp;
-    }
+    temp = ht->array[index];
+    ht->array[index] = to_be_stored;
+    to_be_stored->next = temp;
 
     return (1);
 }
