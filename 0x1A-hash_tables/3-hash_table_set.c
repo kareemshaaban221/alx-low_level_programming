@@ -18,7 +18,7 @@ char *key_str = malloc(sizeof(char *)), *value_str = malloc(sizeof(char *));
 hash_node_t *temp = NULL;
 hash_node_t *to_be_stored = (hash_node_t *)malloc(sizeof(hash_node_t));
 
-if (!ht || !to_be_stored || !key_str || !value_str || !value || !key || *key == '\0')
+if (!ht || !to_be_stored || !key_str || !value_str || !value || !key || !(*key))
 return (0);
 
 to_be_stored->key = strcpy(key_str, key);
