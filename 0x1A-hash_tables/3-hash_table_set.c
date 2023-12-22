@@ -39,6 +39,9 @@ if (strcmp(temp->key, key) == 0)
 {
 free(temp->value);
 temp->value = to_be_stored->value;
+free(to_be_stored->key);
+free(to_be_stored->value);
+free(to_be_stored);
 return (1);
 }
 temp = temp->next;
@@ -46,6 +49,7 @@ temp = temp->next;
 temp = ht->array[index];
 ht->array[index] = to_be_stored;
 to_be_stored->next = temp;
+free(temp);
 }
 
 return (1);
