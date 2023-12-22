@@ -10,6 +10,8 @@ void delete_recursive(hash_node_t *node)
 if (!node)
 return;
 delete_recursive(node->next);
+free(node->key);
+free(node->value);
 free(node);
 }
 
