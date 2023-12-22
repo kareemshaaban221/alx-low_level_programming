@@ -17,7 +17,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
     hash_node_t *temp = NULL;
     hash_node_t *to_be_stored = NULL;
 
-    if (!value || !key || !(*key))
+    if (!ht || !key || !(*key) || !value)
         return (0);
 
     if (!ht->array[index])
