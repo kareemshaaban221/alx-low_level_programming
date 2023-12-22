@@ -10,13 +10,14 @@
  * @key: key string
  * @value: value string
  * Return: 1 if successful, 0 otherwise
-*/
+ */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-unsigned long int index = key_index((const unsigned char *) key, ht->size);
+unsigned long int index = key_index((const unsigned char *)key, ht->size);
 char *key_str = malloc(sizeof(char *)), *value_str = malloc(sizeof(char *));
-hash_node_t *target = ht->array[index], *temp = NULL;
-hash_node_t *to_be_stored = (hash_node_t *) malloc(sizeof(hash_node_t));
+hash_node_t *target = ht->array[index], *temp = NULL, *pre_temp = NULL;
+hash_node_t *to_be_stored = (hash_node_t *)malloc(sizeof(hash_node_t));
+short found = 0;
 
 if (!to_be_stored || !key_str || !value_str)
 return (0);
@@ -30,8 +31,29 @@ target = to_be_stored;
 else
 {
 temp = target;
+pre_temp = NULL;
+while (temp)
+{
+if (strcmp(temp->key, key) == 0)
+{
+to_be_stored->next = temp->next;
+if (pre_temp)
+pre_temp->next = to_be_stored;
+else
+temp = to_be_stored;
+free(temp);
+found = 1;
+return (1);
+}
+pre_temp = temp;
+temp = temp->next;
+}
+if (!found)
+{
+temp = target;
 target = to_be_stored;
 to_be_stored->next = temp;
+}
 }
 
 return (1);
