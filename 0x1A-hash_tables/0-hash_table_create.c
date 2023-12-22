@@ -59,9 +59,6 @@ return (_node);
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
-/**
- * allocate memory for the main array of nodes of the hash table
- */
 hash_table_t *table = hash_table_create_table_ptr();
 hash_node_t **array = hash_table_create_array_ptr(size);
 hash_node_t *_node  = NULL;
