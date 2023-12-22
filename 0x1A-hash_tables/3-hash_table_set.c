@@ -13,7 +13,7 @@
 */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-unsigned long int index = key_index(key, ht->size);
+unsigned long int index = key_index((const unsigned char *) key, ht->size);
 char *key_str = malloc(sizeof(char *)), *value_str = malloc(sizeof(char *));
 hash_node_t *target = ht->array[index], *temp = NULL;
 hash_node_t *to_be_stored = (hash_node_t *) malloc(sizeof(hash_node_t));
