@@ -71,8 +71,8 @@ free(table);
 return (NULL);
 }
 
-table->array = array;
 table->size = size;
+table->array = array;
 
 while (size-- > 0)
 {
@@ -83,7 +83,7 @@ free(array);
 free(table);
 return (NULL);
 }
-(*array) = _node;
+(*array) = NULL;
 array = array + 1;
 }
 
