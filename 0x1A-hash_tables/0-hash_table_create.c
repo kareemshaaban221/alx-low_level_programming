@@ -76,13 +76,6 @@ table->array = array;
 
 while (size-- > 0)
 {
-_node = hash_table_create_node_ptr();
-if (!_node)
-{
-free(array);
-free(table);
-return (NULL);
-}
 (*array) = NULL;
 array = array + 1;
 }
