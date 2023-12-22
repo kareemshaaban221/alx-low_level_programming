@@ -3,7 +3,8 @@
 /**
  * hash_table_get - get an element from the hash table
  * get hashed key <==> hash_function(key)
- * look for key in the linked list under the index with the value of the hashed key
+ * look for key in the linked list under the index with
+ * the value of the hashed key
  * @ht: the hash table
  * @key: the hash key
  * Return: the element or NULL
