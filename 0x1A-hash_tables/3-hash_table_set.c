@@ -6,7 +6,8 @@
  * get the ht->array at the index of key
  * create a node with the value
  * append to the node inside the position
- * ! (ERROR): I was declare index and temp before checking the condition of NULL value
+ * ! (ERROR): I was declare index and temp before checking
+ * the condition of NULL value
  * @ht: the hash table
  * @key: key string
  * @value: value string
