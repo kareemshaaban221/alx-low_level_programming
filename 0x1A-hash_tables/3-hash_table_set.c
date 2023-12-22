@@ -13,39 +13,39 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-unsigned long int index = 0;
-hash_node_t *new_hash_node = NULL;
-hash_node_t *tmp = NULL;
+    unsigned long int index = key_index((const unsigned char *)key, ht->size);
+    hash_node_t *temp = NULL;
+    hash_node_t *to_be_stored = (hash_node_t *)malloc(sizeof(hash_node_t));
 
-if (!ht || !key || !(*key) || !value)
-return (0);
+    if (!ht || !key || !(*key) || !value || !to_be_stored)
+        return (0);
+    
+    to_be_stored->key = strdup(key);
+    to_be_stored->value = strdup(value);
+    to_be_stored->next = NULL;
 
-index = key_index((unsigned char *)key, ht->size);
-tmp = ht->array[index];
+    if (!ht->array[index])
+        ht->array[index] = to_be_stored;
+    else
+    {
+        temp = ht->array[index];
+        while (temp)
+        {
+            if (strcmp(temp->key, key) == 0)
+            {
+                free(temp->value);
+                temp->value = strdup(value);
+                if (!temp->value)
+                    return (0);
+                free(to_be_stored);
+                return (1);
+            }
+            temp = temp->next;
+        }
+        temp = ht->array[index];
+        ht->array[index] = to_be_stored;
+        to_be_stored->next = temp;
+    }
 
-/* check if key exists */
-while (tmp && strcmp(tmp->key, key) != 0)
-tmp = tmp->next;
-
-/* update value if key already exists */
-if (tmp)
-{
-free(tmp->value);
-tmp->value = strdup(value);
-return (1);
-}
-
-/* add new node if key not found */
-
-new_hash_node = malloc(sizeof(*new_hash_node));
-if (!new_hash_node)
-return (0);
-
-new_hash_node->key = strdup(key);
-new_hash_node->value = strdup(value);
-
-new_hash_node->next = ht->array[index];
-ht->array[index] = new_hash_node;
-
-return (1);
+    return (1);
 }
