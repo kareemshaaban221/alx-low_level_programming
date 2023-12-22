@@ -15,9 +15,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
     unsigned long int index = key_index((const unsigned char *)key, ht->size);
     hash_node_t *temp = NULL;
-    hash_node_t *to_be_stored = NULL;
+    hash_node_t *to_be_stored = (hash_node_t *)malloc(sizeof(hash_node_t));
 
-    if (!ht || !key || !(*key) || !value)
+    if (!ht || !key || !(*key) || !value || !to_be_stored)
+        return (0);
+    
+    to_be_stored->key = strdup(key);
+    to_be_stored->value = strdup(value);
+    to_be_stored->next = NULL;
+    if (!to_be_stored->key || !to_be_stored->value)
         return (0);
 
     if (!ht->array[index])
@@ -33,24 +39,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
                 temp->value = strdup(value);
                 if (!temp->value)
                     return (0);
+                free(to_be_stored);
                 return (1);
             }
             temp = temp->next;
         }
-
-        to_be_stored = (hash_node_t *)malloc(sizeof(hash_node_t));
-        if (!to_be_stored)
-            return (0);
-        to_be_stored->key = strdup(key);
-        to_be_stored->value = strdup(value);
-        to_be_stored->next = NULL;
-
-        if (!to_be_stored->key || !to_be_stored->value)
-            return (0);
         temp = ht->array[index];
         ht->array[index] = to_be_stored;
         to_be_stored->next = temp;
-        free(temp);
     }
 
     return (1);
