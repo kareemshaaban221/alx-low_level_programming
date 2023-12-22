@@ -16,7 +16,7 @@ hash_node_t *temp = NULL;
 if (!ht || !key || !(*key))
 return (NULL);
 
-index = key_index(key, ht->size);
+index = key_index((const unsigned char *)key, ht->size);
 temp = ht->array[index];
 while (temp)
 {
