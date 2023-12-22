@@ -36,23 +36,6 @@ return (array);
 }
 
 /**
- * hash_table_create_node_ptr - create a new hash table node
- * that can be stored in hash table array
- * Return: new hash table node or null on failure
-*/
-hash_node_t *hash_table_create_node_ptr()
-{
-hash_node_t *_node = (hash_node_t *) malloc(sizeof(hash_node_t));
-
-if (!_node)
-{
-free(_node);
-return (NULL);
-}
-return (_node);
-}
-
-/**
  * hash_table_create - create a new hash table and return it or NULL
  * @size: size of the hash table
  * Return: the new hash table or NULL on failure
