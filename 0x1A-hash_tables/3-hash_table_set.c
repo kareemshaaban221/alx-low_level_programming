@@ -15,7 +15,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 unsigned long int index = key_index((const unsigned char *)key, ht->size);
 char *key_str = malloc(sizeof(char *)), *value_str = malloc(sizeof(char *));
-hash_node_t *temp = NULL, *pre_temp = NULL;
+hash_node_t *temp = NULL;
 hash_node_t *to_be_stored = (hash_node_t *)malloc(sizeof(hash_node_t));
 
 if (!to_be_stored || !key_str || !value_str)
@@ -30,7 +30,6 @@ ht->array[index] = to_be_stored;
 else
 {
 temp = ht->array[index];
-pre_temp = NULL;
 while (temp)
 {
 if (strcmp(temp->key, key) == 0)
@@ -38,7 +37,6 @@ if (strcmp(temp->key, key) == 0)
 temp->value = to_be_stored->value;
 return (1);
 }
-pre_temp = temp;
 temp = temp->next;
 }
 temp = ht->array[index];
